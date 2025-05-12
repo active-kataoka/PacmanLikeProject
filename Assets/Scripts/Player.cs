@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
     // 完全にプレイヤーの動きを停止
     private void StopPlayerMovement()
     {
-        rb.velocity = Vector2.zero; // 速度を0
+        rb.linearVelocity = Vector2.zero; // 速度を0
         rb.angularVelocity = 0f;    // 回転速度を0
         rb.freezeRotation = true;   // 回転を固定
         rb.constraints = RigidbodyConstraints2D.FreezeAll; // 移動と回転を制限

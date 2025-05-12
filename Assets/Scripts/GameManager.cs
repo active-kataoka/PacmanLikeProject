@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -85,7 +86,7 @@ public class GameManager : MonoBehaviour
             gameTimer += Time.deltaTime;
 
             // タイマー更新 → 小数点第2位まで表示
-            SetTextTimer(txtTimer, "" + gameTimer.ToString("F2"));
+            SetTextTimer(txtTimer, "" + gameTimer.ToString("F2", CultureInfo.InvariantCulture));
         }
     }
 
@@ -119,7 +120,7 @@ public class GameManager : MonoBehaviour
                 txtTimer.SetActive(true);
                 PlaySE(clearSE);
                 StopBGM();
-                SetTextTimer(txtTimer, "クリアタイム：" + gameTimer.ToString("F2"));
+                SetTextTimer(txtTimer, "" + gameTimer.ToString("F2"));
                 break;
 
             case GameMode.GameOver:

@@ -168,7 +168,7 @@ public class Enemy : MonoBehaviour
     // 完全に敵の動きを停止
     private void StopEnemyMovement()
     {
-        rb.velocity = Vector2.zero; // 速度を0
+        rb.linearVelocity = Vector2.zero; // 速度を0
         rb.angularVelocity = 0f;    // 回転速度を0
         rb.freezeRotation = true;   // 回転を固定
         rb.constraints = RigidbodyConstraints2D.FreezeAll; // 移動と回転を制限
